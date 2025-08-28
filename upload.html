@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Recipe</title>
+    <link rel="stylesheet" href="css\styles.css">
+</head>
+
+<header>
+    <div class="logo">
+        <h1>RecipeShare</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Browse Recipes</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="upload.html">Post a Recipe</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <main>
+        <h2>Post Your Recipe</h2>
+        <form action="http://localhost:3000/upload" method="POST" enctype="multipart/form-data">
+            <label for="recipe-title">Recipe Title</label>
+            <input type="text" id="recipe-title" name="title" required>
+        
+            <label for="description">Description</label>
+            <textarea id="description" name="description" required></textarea>
+        
+            <label for="image">Upload Image</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+        
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="dessert">Dessert</option>
+            </select>
+            <button type="submit" id="submit-button">Submit Recipe</button>
+        </form>
+
+        <script>
+            const submitButton = document.getElementById("submit-button");
+            submitButton.addEventListener("click", () => {
+                window.alert("Your recipe has successfully been uploaded!");
+            })
+        </script>
+    </main>
+</body>
+
+</html>
